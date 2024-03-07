@@ -1,5 +1,6 @@
 let boxes = document.querySelectorAll(".box");
 let rstbtn = document.querySelector(".resetbtn");
+let newGameBtn = document.querySelector(".newGameBtn");
 
 let turno = true;
 let gameOver = false;
@@ -22,9 +23,9 @@ const checkwinner = () => {
             boxes[pattern[1]].innerText === boxes[pattern[2]].innerText
         ) {
             gameOver = true;
-            boxes[pattern[0]].style.backgroundColor = "#FFD700";
-            boxes[pattern[1]].style.backgroundColor = "#FFD700";
-            boxes[pattern[2]].style.backgroundColor = "#FFD700";
+            boxes[pattern[0]].style.backgroundColor = "#0077b6"; // Changed color to light green
+            boxes[pattern[1]].style.backgroundColor = "#0077b6"; // Changed color to light green
+            boxes[pattern[2]].style.backgroundColor = "#0077b6"; // Changed color to light green
             if (boxes[pattern[0]].innerText === "o") {
                 setTimeout(() => {
                     alert("Player O wins!");
@@ -37,6 +38,7 @@ const checkwinner = () => {
         }
     }
 };
+
 
 const resetGame = () => {
     boxes.forEach((box) => {
@@ -56,5 +58,12 @@ boxes.forEach((box) => {
         }
     });
 });
+const startNewGame = () => {
+    resetGame(); // Reset the game board
+    // Additional logic if needed for starting a new game
+};
+
+// Event listener for the "New Game" button
+newGameBtn.addEventListener("click", startNewGame);
 
 rstbtn.addEventListener("click", resetGame);
