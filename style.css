@@ -31,11 +31,17 @@ body {
     width: 18vmin;
     border-radius: 2rem;
     border: none;
-    box-shadow: #3D5A6C;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
     font-size: 10vmin;
     text-align: center;
     color: #7B4B94;
     background-color: #F0F8FF;
+    transition: transform 0.2s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.box:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
 }
 
 .resetbtn {
@@ -46,6 +52,27 @@ body {
     background-color: #7F5A83;
     text-align: center;
     color: #02101b;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out, transform 0.2s ease-in-out;
+}
+
+.resetbtn:hover {
+    background-color: #936ba0;
+    transform: translateY(-2px);
+}
+
+.resetbtn:active {
+    transform: translateY(0);
+}
+
+.resetbtn::after {
+    content: "Reset";
+    display: inline-block;
+    transition: opacity 0.3s ease-in-out;
+}
+
+.resetbtn:hover::after {
+    opacity: 0.8;
 }
 
 h1 {
@@ -60,25 +87,65 @@ h1 {
     text-align: center;
 }
 
+.newGameBtn {
+    height: 5vmin;
+    width: 15vmin;
+    border-radius: 1rem;
+    border-width: 5px;
+    background-color: #AD5389;
+    text-align: center;
+   color: #02101b;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out, transform 0.2s ease-in-out;
+    margin-top: 20px;
+}
+
+.newGameBtn:hover {
+    background-color: #C65F9B;
+    transform: translateY(-2px);
+}
+
+footer {
+    background-color: #6D9DC5;
+    color: white;
+    padding: 30px 0;
+    text-align: center;
+    
+}
+
+footer p {
+    margin: 5px;
+}
+
 /* Media query for smaller screens */
 @media screen and (max-width: 768px) {
     .container {
         height: auto;
     }
+
     .all9 {
         height: 50vmin;
         width: 50vmin;
     }
+
     .box {
         height: 12vmin;
         width: 12vmin;
         font-size: 6vmin;
     }
+
     .resetbtn {
         height: 4vmin;
         width: 10vmin;
         font-size: 2vmin;
     }
+
+    .newGameBtn {
+        height: 4vmin;
+        width: 10vmin;
+        font-size: 2vmin;
+    }
+
     h1 {
         font-size: 1.5rem;
     }
